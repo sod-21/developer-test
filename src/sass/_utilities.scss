@@ -1,0 +1,40 @@
+.search-box {
+    max-width: 52.5rem;
+    width: 100%;
+    padding: 6.875rem 1.25rem;
+    margin: 0 auto;
+
+    form {
+        position: relative;
+    }
+    
+    
+    @include x-breakpoints(mobile) {
+        padding: 6.875rem 1.25rem;
+    }
+
+    input[type=text] {
+        font-size: 1.3125rem;
+        line-height: 1.75rem;
+        padding: 0.875rem 0;
+        color: $header-color1;     
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid $border-color; 
+        outline: 0;
+    }
+
+    .icon {
+        position: absolute;
+        font-size: 1.5rem;
+        right: 0;
+        top: 50%;
+        color: $header-color2;
+        transform: translateY(-50%);
+    }
+}
+
+input[type=text]::-webkit-input-placeholder { color: $header-color1; }
+input[type=text]::-moz-placeholder { color: $header-color1; }
+input[type=text]:-ms-input-placeholder { color: $header-color1;  } 
+input[type=text]:-moz-placeholder { color: $header-color1;  }

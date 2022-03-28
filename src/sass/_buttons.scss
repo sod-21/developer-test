@@ -1,0 +1,41 @@
+.btn {
+    font-size: 1rem;
+    display: inline-block;
+    padding: 1rem;
+    color: $header-color;
+    text-decoration: none;
+    text-align: center;
+
+    &.btn-big {
+        background-color: transparent;
+        border: 1px solid $header-color;
+        padding: 0.875rem 2.385rem;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+}
+
+
+.btn-collapse-nav {
+    background: transparent;
+    border: 0;
+    display: block;
+    font-size: 1.5rem;
+    
+    @include x-breakpoints(extra) {
+        display: none;
+    }
+}
+
+.header-btn-group {    
+    @include x-breakpoints(mobile) {
+        .btn {
+            border: 1px solid $header-color2;
+            color: $header-color2;
+            
+            &.btn-big {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+/// @example
+///   .selector {
+///     @include x-breakpoints(mobile,  320px) { width: 100%; }
+///   }
+///
+
+@mixin x-breakpoints($point, $bp-mobile-width: 768px, $bp-tablet-width: 1024px, $bp-desktop-width: 1440px) {
+	$bp-mobile: '(max-width: #{$bp-mobile-width})';
+	$bp-tablet: '(min-width: #{$bp-mobile-width}) and (max-width: #{$bp-tablet-width})';
+	$bp-desktop: '(min-width: #{$bp-tablet-width}) and (max-width: #{$bp-desktop-width})';    
+    $bp-extra: '(min-width: #{$bp-desktop-width})';
+
+	@if $point == mobile {
+		@media #{$bp-mobile} {
+			@content;
+		}
+	}
+	@else if $point == tablet {
+		@media #{$bp-tablet} {
+			@content;
+		}
+	}
+	@else if $point == desktop {
+		@media #{$bp-desktop} {
+			@content;
+		}
+	}
+    @else if $point == extra {
+		@media #{$bp-extra} {
+			@content;
+		}
+	}
+	@else {
+		@warn "You are requesting an invalid breakpoint: `#{$point}`.";
+	}
+}
